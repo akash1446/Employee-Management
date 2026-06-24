@@ -15,7 +15,6 @@ function EmployeeForm() {
     password: "",
     department: "",
     salary: "",
-  
   });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(isEditMode);
@@ -56,7 +55,7 @@ function EmployeeForm() {
     }
   };
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className="loading-text">Loading...</p>;
 
   return (
     <div className="employee-form">
@@ -122,7 +121,7 @@ function EmployeeForm() {
           required
         />
 
-        {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && <p className="form-error">{error}</p>}
 
         <button type="submit">{isEditMode ? "Update" : "Create"}</button>
       </form>

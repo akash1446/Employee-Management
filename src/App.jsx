@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <nav className="navbar">
-        <div className="nav-brand">EMS</div>
+        <div className="nav-brand">Employee Management System</div>
         <div className="nav-links">
           <NavLink to="/login" className="nav-link">
             Login
