@@ -1,0 +1,90 @@
+/* Employee Form Styles */
+
+.employee-form {
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 32px 36px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.employee-form h1 {
+  font-size: 24px;
+  margin-bottom: 24px;
+  color: #1f2937;
+  text-align: center;
+}
+
+.employee-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.employee-form label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+.employee-form input {
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.employee-form input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.employee-form input::placeholder {
+  color: #9ca3af;
+}
+
+.employee-form button[type="submit"] {
+  margin-top: 24px;
+  padding: 12px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.employee-form button[type="submit"]:hover {
+  background-color: #1d4ed8;
+}
+
+.employee-form button[type="submit"]:active {
+  transform: translateY(1px);
+}
+
+.employee-form p {
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Error message */
+.employee-form p[style] {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Loading state */
+.employee-form + p,
+p:only-child {
+  text-align: center;
+  font-size: 16px;
+  color: #6b7280;
+  margin-top: 60px;
+}

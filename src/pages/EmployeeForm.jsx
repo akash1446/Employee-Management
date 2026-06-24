@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import api from "../services/api";
+import "../utils/employeeform.css";
 
 function EmployeeForm() {
   const { id } = useParams(); // present only when editing
@@ -58,7 +59,7 @@ function EmployeeForm() {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div>
+    <div className="employee-form">
       <h1>{isEditMode ? "Edit Employee" : "Add Employee"}</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="firstName">First Name</label>
