@@ -5,7 +5,7 @@ import { useApp } from "../context/AppContext";
 import "../utils/login.css";
 
 function Login() {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -17,11 +17,11 @@ function Login() {
     setError("");
     setLoading(true);
     try {
-      const res = await api.post("/auth/login", { username, password });
-      login(res.data.user, res.data.token);
+      const res = await api.post("/auth/login", { email, password });
+      login(res.data, res.data.token);
       navigate("/dashboard");
     } catch (err) {
-      setError("Invalid username or password");
+      setError("Invalid email or password");
     } finally {
       setLoading(false);
     }
@@ -33,13 +33,13 @@ function Login() {
         <h1 className="login-title">Login</h1>
         <form className="login-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="username">Username</label>
+            <label htmlFor="email">Email</label>
             <input
-              type="text"
-              id="username"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              type="email"
+              id="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
